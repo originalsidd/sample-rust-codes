@@ -1,29 +1,30 @@
-use std::io;
-use rand::Rng;
-
 fn main() {
-    println!("Guess the number!");
+	// for loop
+	for i in 1..5 + 1 {
+		println!("{}", i);
+	}
 
-    let secret_number: u16 = rand::thread_rng().gen_range(1..1001);
+	// for loop for an iterator
+	let names = ["Sidd", "Jackie", "Bruh"];
+	for name in names.iter() {
+		println!("{}", name);
+	}
 
-    loop {
-        println!("Please input your guess between 1 and 1000.");
+	// while
+	let mut x = 1;
+	while x <= 5 {
+		println!("{}", x);
+		x += 1;
+	}
 
-        let mut guess = String::new();
-
-        io::stdin().read_line(&mut guess).expect("Failed to read line");
-
-        let guess: u16 = guess.trim().parse().unwrap();
-
-        println!("You guessed: {}", guess);
-
-        match guess.cmp(&secret_number) {
-            std::cmp::Ordering::Less => println!("Too small!"),
-            std::cmp::Ordering::Greater => println!("Too big!"),
-            std::cmp::Ordering::Equal => {
-                println!("You win!");
-                break;
-            }
-        }
-    }
+	// loop
+	let mut c: u8 = 0;
+	let x: u8 = 5;
+	loop {
+		println!("This loop will run for {} time", x - c - 1);
+		c += 1;
+		if c == x {
+			break;
+		}
+	}
 }
