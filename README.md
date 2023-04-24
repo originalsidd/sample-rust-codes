@@ -2,6 +2,8 @@
 
 Some sample codes for beginners to get used to the rust environment.
 
+The repo includes starter codes including a guess the number program.
+
 ### Follow the steps to run locally
 
 1. Install rust using rustup.
